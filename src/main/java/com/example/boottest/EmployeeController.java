@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.validation.Valid;
+import java.util.List;
 
 
 @RestController
@@ -29,6 +30,10 @@ public class EmployeeController {
         return new ResponseEntity<Employee>(savedEmployee, HttpStatus.CREATED);
     }
 
+    @GetMapping("/api/employees")
+    public List<Employee> showEmployees() {
+        throw new ApiRequestException("Oops cannot get all students");
+    }
 
 
 }
